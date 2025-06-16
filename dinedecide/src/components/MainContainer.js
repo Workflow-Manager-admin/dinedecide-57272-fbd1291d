@@ -12,13 +12,13 @@ import React, { useState, useMemo, useCallback } from 'react';
  */
 
 /**
- * Expanded mock restaurants array. Now includes price and rating fields, and more varied data.
+ * Expanded mock restaurants array. Now includes price, rating, city fields, and more varied data.
  */
 const MOCK_RESTAURANTS = [
-  // Original 10 restaurants...
   {
     name: "Random Bistro",
     address: "123 Foodie Lane, GoodEats City",
+    city: "GoodEats City",
     description: "Cozy continental place, great brunch.",
     cuisine: "International, Bistro",
     price: "$$",
@@ -29,6 +29,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Noodle Nirvana",
     address: "456 Noodle Rd, Woktown",
+    city: "Woktown",
     description: "Asian noodles & more, specialty ramen bowls.",
     cuisine: "Asian, Japanese",
     price: "$",
@@ -39,6 +40,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Pizza Palace",
     address: "789 Slice Ave, Cheeseborough",
+    city: "Cheeseborough",
     description: "NY-style pizza, family friendly spot.",
     cuisine: "Pizza, Italian",
     price: "$$",
@@ -49,6 +51,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Taco Tower",
     address: "321 Fiesta Blvd, Mexicana",
+    city: "Mexicana",
     description: "Bold flavors, classic tacos & spicy salsas.",
     cuisine: "Mexican, Latin",
     price: "$",
@@ -59,6 +62,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Veggie Vibe",
     address: "9 Leafy Green Dr, Plantearth",
+    city: "Plantearth",
     description: "Plant-based, creative vegetarian eats.",
     cuisine: "Vegetarian, Vegan, Healthy",
     price: "$$",
@@ -69,6 +73,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Steak Supreme",
     address: "111 Carnivore Ct, Grillville",
+    city: "Grillville",
     description: "Classic American steakhouse with premium cuts.",
     cuisine: "Steakhouse, American",
     price: "$$$",
@@ -79,6 +84,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Curry Corner",
     address: "555 Spice St, Flavor Town",
+    city: "Flavor Town",
     description: "Authentic Indian curries and vegetarian dishes.",
     cuisine: "Indian, Vegetarian",
     price: "$$",
@@ -89,6 +95,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Burger Base",
     address: "888 Grill Rd, Burger City",
+    city: "Burger City",
     description: "Classic/creative burgers, fries, shakes.",
     cuisine: "Burger, American, Fast Food",
     price: "$",
@@ -99,6 +106,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Sushi Sensei",
     address: "321 Ocean Dr, Sushiville",
+    city: "Sushiville",
     description: "Fresh sushi, sashimi, omakase.",
     cuisine: "Japanese, Sushi",
     price: "$$$",
@@ -109,6 +117,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Pho Paradise",
     address: "777 Broth Ave, Little Saigon",
+    city: "Little Saigon",
     description: "Vietnamese pho, banh mi, street eats.",
     cuisine: "Vietnamese, Asian",
     price: "$",
@@ -116,10 +125,11 @@ const MOCK_RESTAURANTS = [
     lat: 29.7604,
     lng: -95.3698
   },
-  // Added 10+ more for a more realistic data pool
+  // Add a few more for diversity and demo
   {
     name: "Urban Grill",
     address: "111 City Ln, Downtown",
+    city: "Downtown",
     description: "Trendy grill with local craft beers.",
     cuisine: "American, Grill",
     price: "$$",
@@ -130,6 +140,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "The French Table",
     address: "321 Rue de Gourmet, Parisville",
+    city: "Parisville",
     description: "Traditional French bistro cuisine.",
     cuisine: "French, Bistro",
     price: "$$$",
@@ -140,6 +151,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Falafel House",
     address: "875 Cedar St, Midtown",
+    city: "Midtown",
     description: "Middle Eastern falafel, shawarma, vegan options.",
     cuisine: "Middle Eastern, Vegan",
     price: "$",
@@ -150,6 +162,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "The Crepe Cart",
     address: "202 Maple Ave, Sweetspot",
+    city: "Sweetspot",
     description: "Savory/sweet crepes, walk-up window.",
     cuisine: "French, Dessert, Quick Bite",
     price: "$",
@@ -160,6 +173,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "BBQ Junction",
     address: "1477 Pitmaster Rd, Smokeville",
+    city: "Smokeville",
     description: "Slow-smoked BBQ, family platter deals.",
     cuisine: "BBQ, American",
     price: "$$",
@@ -170,6 +184,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Dim Sum Delight",
     address: "23 Lucky Dragon St, Chinatown",
+    city: "Chinatown",
     description: "All-day dim sum with classic carts.",
     cuisine: "Chinese, Dim Sum",
     price: "$$",
@@ -180,6 +195,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Pasta Fresca",
     address: "41 Roma Rd, Little Italy",
+    city: "Little Italy",
     description: "Homemade pasta, wine pairings.",
     cuisine: "Italian, Pasta",
     price: "$$$",
@@ -190,6 +206,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Fish & Chips Co.",
     address: "77 Boardwalk Dr, Seaside",
+    city: "Seaside",
     description: "British-style fried fish & thick fries.",
     cuisine: "British, Seafood",
     price: "$",
@@ -200,6 +217,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Tapas y Vino",
     address: "56 Plaza Real, Oldtown",
+    city: "Oldtown",
     description: "Spanish tapas, sangria, cozy ambiance.",
     cuisine: "Spanish, Tapas, Mediterranean",
     price: "$$",
@@ -210,6 +228,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Soul Bowl",
     address: "601 College Ave, Westville",
+    city: "Westville",
     description: "Nourish bowls, healthy soups, gluten free.",
     cuisine: "Healthy, Fast Casual",
     price: "$$",
@@ -220,6 +239,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Döner Kepab Haus",
     address: "1399 Berlin Loop, Midtown",
+    city: "Midtown",
     description: "Turkish kebab, döner sandwiches.",
     cuisine: "Turkish, Street Food",
     price: "$",
@@ -230,6 +250,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Brews & Bites",
     address: "55 Hops Road, Beerpark",
+    city: "Beerpark",
     description: "Craft beers, burgers, casual brews.",
     cuisine: "American, Bar, Fast Food",
     price: "$$",
@@ -240,6 +261,7 @@ const MOCK_RESTAURANTS = [
   {
     name: "Le Vegan Gourmet",
     address: "501 Green Blvd, Uptown",
+    city: "Uptown",
     description: "Plant-based tasting menu, fine dining.",
     cuisine: "Vegan, Contemporary",
     price: "$$$",
@@ -250,25 +272,47 @@ const MOCK_RESTAURANTS = [
   {
     name: "Bangkok Street Eats",
     address: "888 Pad Thai St, Little Bangkok",
+    city: "Little Bangkok",
     description: "Authentic Thai street food, spicy!",
     cuisine: "Thai, Asian",
     price: "$$",
     rating: 4.6,
     lat: 13.7563,
     lng: 100.5018
-  }
-  // (Add more as needed for demo or testing scale)
+  },
+  {
+    name: "Burger Meister",
+    address: "23 Burger Lane, Midtown",
+    city: "Midtown",
+    description: "German-style burgers and beer.",
+    cuisine: "German, Burger",
+    price: "$$",
+    rating: 4.2,
+    lat: 52.5163,
+    lng: 13.3777
+  },
+  {
+    name: "Bao Bun Bar",
+    address: "99 Snack St, Foodtopia",
+    city: "Foodtopia",
+    description: "Trendy bao buns, Asian fusion snacks.",
+    cuisine: "Asian, Fusion",
+    price: "$",
+    rating: 4.3,
+    lat: 30.0444,
+    lng: 31.2357
+  },
 ];
-// Additional restaurants can be added in real datasets.
 
 /**
- * MainContainer supports multiple advanced filters:
- * - Text filter for name/address/cuisine
+ * MainContainer supports advanced filters:
+ * - Text filter for name/address/cuisine/city
  * - Cuisine dropdown (single select, dynamically populated)
  * - Price dropdown ("$", "$$", "$$$")
  * - Minimum rating selector (4.5, 4.0, etc.)
+ * - Location/city dropdown (single select)
  * 
- * Data: Uses static mock data, but filter logic is fully ready for real data (API integration).
+ * Data: Uses static mock data, but filter logic is ready for real API integration.
  */
 
 function MainContainer() {
@@ -277,6 +321,7 @@ function MainContainer() {
   const [cuisineFilter, setCuisineFilter] = useState("");
   const [priceFilter, setPriceFilter] = useState("");
   const [minRating, setMinRating] = useState("");
+  const [locationFilter, setLocationFilter] = useState(""); // new: location/city
 
   // 2. State for current suggested restaurant
   const [suggestion, setSuggestion] = useState(null);
@@ -293,21 +338,38 @@ function MainContainer() {
     return Array.from(cuisines).sort();
   }, []);
 
+  // 3b. Location/City options
+  const locationOptions = useMemo(() => {
+    const cities = new Set();
+    MOCK_RESTAURANTS.forEach(r => {
+      if (r.city && typeof r.city === "string") {
+        cities.add(r.city.trim());
+      }
+    });
+    return Array.from(cities).sort();
+  }, []);
+
   // 4. Filtered restaurants according to all filters (multi-criteria)
   const filteredRestaurants = useMemo(() => {
     return MOCK_RESTAURANTS.filter((r) => {
-      // Text filter (searches name, cuisine, address)
+      // Text filter (searches name, cuisine, address, city)
       const lowerText = textFilter.toLowerCase();
       const textMatch =
         !lowerText ||
         r.name.toLowerCase().includes(lowerText) ||
         r.cuisine.toLowerCase().includes(lowerText) ||
-        r.address.toLowerCase().includes(lowerText);
+        r.address.toLowerCase().includes(lowerText) ||
+        (r.city && r.city.toLowerCase().includes(lowerText));
 
       // Cuisine filter (single selection)
       const cuisineMatch =
         !cuisineFilter ||
         r.cuisine.split(",").map(s => s.trim()).includes(cuisineFilter);
+
+      // Location/city filter (single selection)
+      const cityMatch =
+        !locationFilter ||
+        (r.city && r.city === locationFilter);
 
       // Price filter ("$", "$$", "$$$")
       const priceMatch = !priceFilter || r.price === priceFilter;
@@ -318,9 +380,9 @@ function MainContainer() {
         (typeof r.rating === "number" && r.rating >= parseFloat(minRating));
 
       // Only include if all criteria are met
-      return textMatch && cuisineMatch && priceMatch && ratingMatch;
+      return textMatch && cuisineMatch && cityMatch && priceMatch && ratingMatch;
     });
-  }, [textFilter, cuisineFilter, priceFilter, minRating]);
+  }, [textFilter, cuisineFilter, priceFilter, minRating, locationFilter]);
 
   // 5. Random suggestion picker, avoiding current suggestion if possible
   const getRandomSuggestion = useCallback(() => {
@@ -353,6 +415,7 @@ function MainContainer() {
   const handleCuisineChange = (e) => setCuisineFilter(e.target.value);
   const handlePriceChange = (e) => setPriceFilter(e.target.value);
   const handleRatingChange = (e) => setMinRating(e.target.value);
+  const handleLocationChange = (e) => setLocationFilter(e.target.value);
 
   // 8. Handler for Re-roll
   const handleReroll = () => {
@@ -436,6 +499,26 @@ function MainContainer() {
               <option value="">All cuisines</option>
               {cuisineOptions.map((c) =>
                 <option key={c} value={c}>{c}</option>
+              )}
+            </select>
+            <select
+              value={locationFilter}
+              onChange={handleLocationChange}
+              style={{
+                padding: '10px 7px',
+                border: '1px solid var(--border-color)',
+                borderRadius: 4,
+                background: '#1a1a1a',
+                color: 'var(--text-color)',
+                fontSize: '1rem',
+                minWidth: 110,
+                maxWidth: 150
+              }}
+              aria-label="Location/city filter"
+            >
+              <option value="">All locations</option>
+              {locationOptions.map((loc) =>
+                <option key={loc} value={loc}>{loc}</option>
               )}
             </select>
             <select
