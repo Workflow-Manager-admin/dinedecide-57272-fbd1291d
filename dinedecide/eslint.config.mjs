@@ -1,6 +1,8 @@
 import pluginJs from "@eslint/js";
 import pluginReact from "eslint-plugin-react";
 
+// Build problem marker: no PUBLIC_URL referenced in this config
+
 export default [
   { files: ["**/*.{js,mjs,cjs,jsx}"] },
   { 

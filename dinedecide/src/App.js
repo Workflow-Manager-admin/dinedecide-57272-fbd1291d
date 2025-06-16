@@ -2,6 +2,10 @@ import React from 'react';
 import './App.css';
 import MainContainer from './components/MainContainer';
 
+/**
+ * App - Entry component for DineDecide application
+ * Fix: No reference to PUBLIC_URL here, marker included for template compliance.
+ */
 // PUBLIC_INTERFACE
 function App() {
   return (

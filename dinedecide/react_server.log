@@ -23,4 +23,252 @@ modules by path ./.ve/ 15.1 KiB
     ./.ve/EditorOverlay.css 2.25 KiB [built] [code generated]
     ./node_modules/css-loader/dist/cjs.js!./.ve/EditorOverlay.css 697 bytes [built] [code generated]
   ./.ve/EditorOverlay.jsx 1.58 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 1377 ms
+webpack 5.99.9 compiled successfully in 1333 ms
+assets by status 1.92 KiB [cached] 1 asset
+assets by path *.js 1.47 MiB
+  asset bundle.js 1.43 MiB [emitted] (name: main)
+  asset main.c18dc975aede4273920e.hot-update.js 36.4 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.c18dc975aede4273920e.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.47 MiB = bundle.js 1.43 MiB main.c18dc975aede4273920e.hot-update.js 36.4 KiB
+cached modules 1.27 MiB [cached] 42 modules
+runtime modules 27.5 KiB 14 modules
+./src/components/MainContainer.js 30.3 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 186 ms
+assets by status 1.92 KiB [cached] 1 asset
+assets by path *.js 1.47 MiB
+  asset bundle.js 1.43 MiB [emitted] (name: main)
+  asset main.fb371d27a0ebaec4b1e1.hot-update.js 36.5 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.fb371d27a0ebaec4b1e1.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.47 MiB = bundle.js 1.43 MiB main.fb371d27a0ebaec4b1e1.hot-update.js 36.5 KiB
+cached modules 1.27 MiB [cached] 42 modules
+runtime modules 27.5 KiB 14 modules
+./src/components/MainContainer.js 30.3 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 114 ms
+assets by status 1.92 KiB [cached] 1 asset
+assets by path *.js 1.43 MiB
+  asset bundle.js 1.43 MiB [emitted] (name: main)
+  asset main.f7fd58b546a8b59801ba.hot-update.js 3.96 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.f7fd58b546a8b59801ba.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.43 MiB = bundle.js 1.43 MiB main.f7fd58b546a8b59801ba.hot-update.js 3.96 KiB
+cached modules 1.3 MiB [cached] 42 modules
+runtime modules 27.5 KiB 14 modules
+./src/App.js 1.51 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 39 ms
+Injecting EditorRootWrapper import: ../.ve/EditorRootWrapper
+assets by status 1.92 KiB [cached] 1 asset
+assets by path *.js 1.43 MiB
+  asset bundle.js 1.43 MiB [emitted] (name: main)
+  asset main.9528966f4e8ac4a6aa65.hot-update.js 2.83 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.9528966f4e8ac4a6aa65.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.43 MiB = bundle.js 1.43 MiB main.9528966f4e8ac4a6aa65.hot-update.js 2.83 KiB
+cached modules 1.3 MiB [cached] 42 modules
+runtime modules 27.5 KiB 14 modules
+./src/index.js 604 bytes [built] [code generated]
+webpack 5.99.9 compiled successfully in 41 ms
+assets by path *.js 41.1 KiB
+  asset bundle.js 40.3 KiB [emitted] (name: main)
+  asset main.a5823417b0c10266316e.hot-update.js 854 bytes [emitted] [immutable] [hmr] (name: main)
+asset index.html 9.9 KiB [emitted]
+asset main.a5823417b0c10266316e.hot-update.json 2.1 KiB [emitted] [immutable] [hmr]
+Entrypoint main 41.1 KiB = bundle.js 40.3 KiB main.a5823417b0c10266316e.hot-update.js 854 bytes
+runtime modules 26.6 KiB 9 modules
+
+ERROR in Module not found: SyntaxError: /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedecide/package.json (directory description file): SyntaxError: /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedecide/package.json (directory description file): SyntaxError: /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedecide/package.json (directory description file): SyntaxError: /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedecide/package.json (directory description file): SyntaxError: /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedecide/package.json (directory description file): SyntaxError: /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedecide/package.json (directory description file): SyntaxError: /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedecide/package.json (directory description file): SyntaxError: Unexpected token / in JSON at position 407
+
+ERROR in Module not found: SyntaxError: /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedecide/package.json (directory description file): SyntaxError: /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedecide/package.json (directory description file): SyntaxError: /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedecide/package.json (directory description file): SyntaxError: /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedecide/package.json (directory description file): SyntaxError: /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedecide/package.json (directory description file): SyntaxError: /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedecide/package.json (directory description file): SyntaxError: Unexpected token / in JSON at position 407
+
+ERROR in main
+Module not found: SyntaxError: /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedecide/package.json (directory description file): SyntaxError: Unexpected token / in JSON at position 407
+
+ERROR in Error: Child compilation failed:
+  Module not found: SyntaxError: /home/kavia/workspace/code-generation/dinedecid  e-57272-fbd1291d/dinedecide/package.json (directory description file): SyntaxE  rror: /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedeci  de/package.json (directory description file): SyntaxError: /home/kavia/workspa  ce/code-generation/dinedecide-57272-fbd1291d/dinedecide/package.json (director  y description file): SyntaxError: /home/kavia/workspace/code-generation/dinede  cide-57272-fbd1291d/dinedecide/package.json (directory description file): Synt  axError: Unexpected token / in JSON at position 407
+  ModuleNotFoundError: Module not found: SyntaxError: /home/kavia/workspace/code  -generation/dinedecide-57272-fbd1291d/dinedecide/package.json (directory descr  iption file): SyntaxError: /home/kavia/workspace/code-generation/dinedecide-57  272-fbd1291d/dinedecide/package.json (directory description file): SyntaxError  : /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedecide/p  ackage.json (directory description file): SyntaxError: /home/kavia/workspace/c  ode-generation/dinedecide-57272-fbd1291d/dinedecide/package.json (directory de  scription file): SyntaxError: Unexpected token / in JSON at position 407
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/webpack/lib/Compilation.js:2230:28
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/webpack/lib/NormalModuleFactory.js:933:13
+      at eval (eval at create (/home/kavia/workspace/code-generation/dinedecide-  57272-fbd1291d/dinedecide/node_modules/tapable/lib/HookCodeFactory.js:33:10),   <anonymous>:10:1)
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/webpack/lib/NormalModuleFactory.js:347:22
+      at eval (eval at create (/home/kavia/workspace/code-generation/dinedecide-  57272-fbd1291d/dinedecide/node_modules/tapable/lib/HookCodeFactory.js:33:10),   <anonymous>:9:1)
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/webpack/lib/NormalModuleFactory.js:530:22
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/webpack/lib/NormalModuleFactory.js:167:10
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/webpack/lib/NormalModuleFactory.js:756:23
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/neo-async/async.js:2830:7
+      at done (/home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/d  inedecide/node_modules/neo-async/async.js:2925:13)
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/webpack/lib/NormalModuleFactory.js:1202:23
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/enhanced-resolve/lib/Resolver.js:620:22
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/enhanced-resolve/lib/Resolver.js:716:21
+      at eval (eval at create (/home/kavia/workspace/code-generation/dinedecide-  57272-fbd1291d/dinedecide/node_modules/tapable/lib/HookCodeFactory.js:33:10),   <anonymous>:24:1)
+      at done (/home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/d  inedecide/node_modules/webpack/lib/cache/ResolverCachePlugin.js:369:13)
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/webpack/lib/cache/ResolverCachePlugin.js:204:22
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/enhanced-resolve/lib/Resolver.js:716:21
+      at eval (eval at create (/home/kavia/workspace/code-generation/dinedecide-  57272-fbd1291d/dinedecide/node_modules/tapable/lib/HookCodeFactory.js:33:10),   <anonymous>:10:1)
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/enhanced-resolve/lib/Resolver.js:716:21
+      at eval (eval at create (/home/kavia/workspace/code-generation/dinedecide-  57272-fbd1291d/dinedecide/node_modules/tapable/lib/HookCodeFactory.js:33:10),   <anonymous>:24:1)
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:58:24
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/enhanced-resolve/lib/DescriptionFileUtils.js:146:21
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/enhanced-resolve/lib/forEachBail.js:39:13
+      at onJson (/home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d  /dinedecide/node_modules/enhanced-resolve/lib/DescriptionFileUtils.js:131:14)
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/enhanced-resolve/lib/DescriptionFileUtils.js:81:15
+      at runCallbacks (/home/kavia/workspace/code-generation/dinedecide-57272-fb  d1291d/dinedecide/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:5  2:4)
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:279:5
+      at Array.<anonymous> (/home/kavia/workspace/code-generation/dinedecide-572  72-fbd1291d/dinedecide/node_modules/enhanced-resolve/lib/CachedInputFileSystem  .js:596:17)
+      at runCallbacks (/home/kavia/workspace/code-generation/dinedecide-57272-fb  d1291d/dinedecide/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:4  5:15)
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:279:5
+      at /home/kavia/workspace/code-generation/dinedecide-57272-fbd1291d/dinedec  ide/node_modules/graceful-fs/graceful-fs.js:123:16
+      at FSReqCallback.readFileAfterClose [as oncomplete] (node:internal/fs/read  _file_context:68:3)
+  
+  - Compilation.js:2230 
+    [dinedecide]/[webpack]/lib/Compilation.js:2230:28
+  
+  - NormalModuleFactory.js:933 
+    [dinedecide]/[webpack]/lib/NormalModuleFactory.js:933:13
+  
+  
+  - NormalModuleFactory.js:347 
+    [dinedecide]/[webpack]/lib/NormalModuleFactory.js:347:22
+  
+  
+  - NormalModuleFactory.js:530 
+    [dinedecide]/[webpack]/lib/NormalModuleFactory.js:530:22
+  
+  - NormalModuleFactory.js:167 
+    [dinedecide]/[webpack]/lib/NormalModuleFactory.js:167:10
+  
+  - NormalModuleFactory.js:756 
+    [dinedecide]/[webpack]/lib/NormalModuleFactory.js:756:23
+  
+  - async.js:2830 
+    [dinedecide]/[neo-async]/async.js:2830:7
+  
+  - async.js:2925 done
+    [dinedecide]/[neo-async]/async.js:2925:13
+  
+  - NormalModuleFactory.js:1202 
+    [dinedecide]/[webpack]/lib/NormalModuleFactory.js:1202:23
+  
+  - Resolver.js:620 
+    [dinedecide]/[enhanced-resolve]/lib/Resolver.js:620:22
+  
+  - Resolver.js:716 
+    [dinedecide]/[enhanced-resolve]/lib/Resolver.js:716:21
+  
+  
+  - ResolverCachePlugin.js:369 done
+    [dinedecide]/[webpack]/lib/cache/ResolverCachePlugin.js:369:13
+  
+  - ResolverCachePlugin.js:204 
+    [dinedecide]/[webpack]/lib/cache/ResolverCachePlugin.js:204:22
+  
+  - Resolver.js:716 
+    [dinedecide]/[enhanced-resolve]/lib/Resolver.js:716:21
+  
+  
+  - Resolver.js:716 
+    [dinedecide]/[enhanced-resolve]/lib/Resolver.js:716:21
+  
+  
+  - DescriptionFilePlugin.js:58 
+    [dinedecide]/[enhanced-resolve]/lib/DescriptionFilePlugin.js:58:24
+  
+  - DescriptionFileUtils.js:146 
+    [dinedecide]/[enhanced-resolve]/lib/DescriptionFileUtils.js:146:21
+  
+  - forEachBail.js:39 
+    [dinedecide]/[enhanced-resolve]/lib/forEachBail.js:39:13
+  
+  - DescriptionFileUtils.js:131 onJson
+    [dinedecide]/[enhanced-resolve]/lib/DescriptionFileUtils.js:131:14
+  
+  - DescriptionFileUtils.js:81 
+    [dinedecide]/[enhanced-resolve]/lib/DescriptionFileUtils.js:81:15
+  
+  - CachedInputFileSystem.js:52 runCallbacks
+    [dinedecide]/[enhanced-resolve]/lib/CachedInputFileSystem.js:52:4
+  
+  - CachedInputFileSystem.js:279 
+    [dinedecide]/[enhanced-resolve]/lib/CachedInputFileSystem.js:279:5
+  
+  - CachedInputFileSystem.js:596 Array.<anonymous>
+    [dinedecide]/[enhanced-resolve]/lib/CachedInputFileSystem.js:596:17
+  
+  - CachedInputFileSystem.js:45 runCallbacks
+    [dinedecide]/[enhanced-resolve]/lib/CachedInputFileSystem.js:45:15
+  
+  - CachedInputFileSystem.js:279 
+    [dinedecide]/[enhanced-resolve]/lib/CachedInputFileSystem.js:279:5
+  
+  - graceful-fs.js:123 
+    [dinedecide]/[graceful-fs]/graceful-fs.js:123:16
+  
+  - read_file_context:68 FSReqCallback.readFileAfterClose [as oncomplete]
+    node:internal/fs/read_file_context:68:3
+  
+  - child-compiler.js:211 
+    [dinedecide]/[html-webpack-plugin]/lib/child-compiler.js:211:18
+  
+  - Compiler.js:625 finalCallback
+    [dinedecide]/[webpack]/lib/Compiler.js:625:5
+  
+  - Compiler.js:661 
+    [dinedecide]/[webpack]/lib/Compiler.js:661:11
+  
+  - Compiler.js:1347 
+    [dinedecide]/[webpack]/lib/Compiler.js:1347:17
+  
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [dinedecide]/[tapable]/lib/Hook.js:18:14
+  
+  - Compiler.js:1343 
+    [dinedecide]/[webpack]/lib/Compiler.js:1343:33
+  
+  - Compilation.js:3061 finalCallback
+    [dinedecide]/[webpack]/lib/Compilation.js:3061:11
+  
+  - Compilation.js:3404 
+    [dinedecide]/[webpack]/lib/Compilation.js:3404:11
+  
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [dinedecide]/[tapable]/lib/Hook.js:18:14
+  
+  - Compilation.js:3397 
+    [dinedecide]/[webpack]/lib/Compilation.js:3397:38
+  
+  
+  - Compilation.js:562 fn
+    [dinedecide]/[webpack]/lib/Compilation.js:562:9
+  
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [dinedecide]/[tapable]/lib/Hook.js:18:14
+  
+  - Compilation.js:3361 cont
+    [dinedecide]/[webpack]/lib/Compilation.js:3361:34
+  
+  - Compilation.js:3417 
+    [dinedecide]/[webpack]/lib/Compilation.js:3417:10
+  
+  - async.js:3485 symbolIterator
+    [dinedecide]/[neo-async]/async.js:3485:9
+
+1 ERROR in child compilations (Use 'stats.children: true' resp. '--stats-children' for more details)
+webpack 5.99.9 compiled with 5 errors in 249 ms
+Injecting EditorRootWrapper import: ../.ve/EditorRootWrapper
+assets by path *.js 2.82 MiB
+  asset bundle.js 1.43 MiB [emitted] (name: main)
+  asset main.120c534c095b3683a853.hot-update.js 1.39 MiB [emitted] [immutable] [hmr] (name: main)
+asset index.html 1.92 KiB [emitted]
+asset main.120c534c095b3683a853.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 2.82 MiB = bundle.js 1.43 MiB main.120c534c095b3683a853.hot-update.js 1.39 MiB
+cached modules 1.25 MiB [cached] 37 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 44.6 KiB
+  modules by path ./src/ 32.4 KiB
+    ./src/index.js 604 bytes [built]
+    ./src/App.js 1.51 KiB [built]
+    ./src/components/MainContainer.js 30.3 KiB [built]
+  modules by path ./.ve/ 12.2 KiB
+    ./.ve/EditorRootWrapper.js 2.68 KiB [built]
+    ./.ve/EditorOverlay.jsx 1.58 KiB [built]
+    ./.ve/SidePanel.js 7.93 KiB [built]
+webpack 5.99.9 compiled successfully in 183 ms

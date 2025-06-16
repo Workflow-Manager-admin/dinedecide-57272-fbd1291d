@@ -15,293 +15,77 @@ import React, { useState, useMemo, useCallback } from 'react';
  * Expanded mock restaurants array. Now includes price, rating, city fields, and more varied data.
  */
 const MOCK_RESTAURANTS = [
-  {
-    name: "Random Bistro",
-    address: "123 Foodie Lane, GoodEats City",
-    city: "GoodEats City",
-    description: "Cozy continental place, great brunch.",
-    cuisine: "International, Bistro",
-    price: "$$",
-    rating: 4.1,
-    lat: 37.7749,
-    lng: -122.4194
-  },
-  {
-    name: "Noodle Nirvana",
-    address: "456 Noodle Rd, Woktown",
-    city: "Woktown",
-    description: "Asian noodles & more, specialty ramen bowls.",
-    cuisine: "Asian, Japanese",
-    price: "$",
-    rating: 4.4,
-    lat: 34.0522,
-    lng: -118.2437
-  },
-  {
-    name: "Pizza Palace",
-    address: "789 Slice Ave, Cheeseborough",
-    city: "Cheeseborough",
-    description: "NY-style pizza, family friendly spot.",
-    cuisine: "Pizza, Italian",
-    price: "$$",
-    rating: 4.0,
-    lat: 40.7128,
-    lng: -74.0060
-  },
-  {
-    name: "Taco Tower",
-    address: "321 Fiesta Blvd, Mexicana",
-    city: "Mexicana",
-    description: "Bold flavors, classic tacos & spicy salsas.",
-    cuisine: "Mexican, Latin",
-    price: "$",
-    rating: 4.2,
-    lat: 29.4241,
-    lng: -98.4936
-  },
-  {
-    name: "Veggie Vibe",
-    address: "9 Leafy Green Dr, Plantearth",
-    city: "Plantearth",
-    description: "Plant-based, creative vegetarian eats.",
-    cuisine: "Vegetarian, Vegan, Healthy",
-    price: "$$",
-    rating: 4.6,
-    lat: 47.6062,
-    lng: -122.3321
-  },
-  {
-    name: "Steak Supreme",
-    address: "111 Carnivore Ct, Grillville",
-    city: "Grillville",
-    description: "Classic American steakhouse with premium cuts.",
-    cuisine: "Steakhouse, American",
-    price: "$$$",
-    rating: 4.7,
-    lat: 41.8781,
-    lng: -87.6298
-  },
-  {
-    name: "Curry Corner",
-    address: "555 Spice St, Flavor Town",
-    city: "Flavor Town",
-    description: "Authentic Indian curries and vegetarian dishes.",
-    cuisine: "Indian, Vegetarian",
-    price: "$$",
-    rating: 4.3,
-    lat: 39.9526,
-    lng: -75.1652
-  },
-  {
-    name: "Burger Base",
-    address: "888 Grill Rd, Burger City",
-    city: "Burger City",
-    description: "Classic/creative burgers, fries, shakes.",
-    cuisine: "Burger, American, Fast Food",
-    price: "$",
-    rating: 3.9,
-    lat: 42.3601,
-    lng: -71.0589
-  },
-  {
-    name: "Sushi Sensei",
-    address: "321 Ocean Dr, Sushiville",
-    city: "Sushiville",
-    description: "Fresh sushi, sashimi, omakase.",
-    cuisine: "Japanese, Sushi",
-    price: "$$$",
-    rating: 4.8,
-    lat: 34.0007,
-    lng: -81.0348
-  },
-  {
-    name: "Pho Paradise",
-    address: "777 Broth Ave, Little Saigon",
-    city: "Little Saigon",
-    description: "Vietnamese pho, banh mi, street eats.",
-    cuisine: "Vietnamese, Asian",
-    price: "$",
-    rating: 4.5,
-    lat: 29.7604,
-    lng: -95.3698
-  },
-  // Add a few more for diversity and demo
-  {
-    name: "Urban Grill",
-    address: "111 City Ln, Downtown",
-    city: "Downtown",
-    description: "Trendy grill with local craft beers.",
-    cuisine: "American, Grill",
-    price: "$$",
-    rating: 4.3,
-    lat: 40.4406,
-    lng: -79.9959
-  },
-  {
-    name: "The French Table",
-    address: "321 Rue de Gourmet, Parisville",
-    city: "Parisville",
-    description: "Traditional French bistro cuisine.",
-    cuisine: "French, Bistro",
-    price: "$$$",
-    rating: 4.7,
-    lat: 48.8566,
-    lng: 2.3522
-  },
-  {
-    name: "Falafel House",
-    address: "875 Cedar St, Midtown",
-    city: "Midtown",
-    description: "Middle Eastern falafel, shawarma, vegan options.",
-    cuisine: "Middle Eastern, Vegan",
-    price: "$",
-    rating: 4.2,
-    lat: 40.7128,
-    lng: -74.0059
-  },
-  {
-    name: "The Crepe Cart",
-    address: "202 Maple Ave, Sweetspot",
-    city: "Sweetspot",
-    description: "Savory/sweet crepes, walk-up window.",
-    cuisine: "French, Dessert, Quick Bite",
-    price: "$",
-    rating: 4.0,
-    lat: 43.6532,
-    lng: -79.3832
-  },
-  {
-    name: "BBQ Junction",
-    address: "1477 Pitmaster Rd, Smokeville",
-    city: "Smokeville",
-    description: "Slow-smoked BBQ, family platter deals.",
-    cuisine: "BBQ, American",
-    price: "$$",
-    rating: 4.5,
-    lat: 35.1495,
-    lng: -90.0490
-  },
-  {
-    name: "Dim Sum Delight",
-    address: "23 Lucky Dragon St, Chinatown",
-    city: "Chinatown",
-    description: "All-day dim sum with classic carts.",
-    cuisine: "Chinese, Dim Sum",
-    price: "$$",
-    rating: 4.4,
-    lat: 37.7946,
-    lng: -122.4077
-  },
-  {
-    name: "Pasta Fresca",
-    address: "41 Roma Rd, Little Italy",
-    city: "Little Italy",
-    description: "Homemade pasta, wine pairings.",
-    cuisine: "Italian, Pasta",
-    price: "$$$",
-    rating: 4.8,
-    lat: 41.9028,
-    lng: 12.4964
-  },
-  {
-    name: "Fish & Chips Co.",
-    address: "77 Boardwalk Dr, Seaside",
-    city: "Seaside",
-    description: "British-style fried fish & thick fries.",
-    cuisine: "British, Seafood",
-    price: "$",
-    rating: 4.1,
-    lat: 51.5074,
-    lng: -0.1278
-  },
-  {
-    name: "Tapas y Vino",
-    address: "56 Plaza Real, Oldtown",
-    city: "Oldtown",
-    description: "Spanish tapas, sangria, cozy ambiance.",
-    cuisine: "Spanish, Tapas, Mediterranean",
-    price: "$$",
-    rating: 4.7,
-    lat: 41.3851,
-    lng: 2.1734
-  },
-  {
-    name: "Soul Bowl",
-    address: "601 College Ave, Westville",
-    city: "Westville",
-    description: "Nourish bowls, healthy soups, gluten free.",
-    cuisine: "Healthy, Fast Casual",
-    price: "$$",
-    rating: 4.3,
-    lat: 34.7304,
-    lng: -86.5861
-  },
-  {
-    name: "Döner Kepab Haus",
-    address: "1399 Berlin Loop, Midtown",
-    city: "Midtown",
-    description: "Turkish kebab, döner sandwiches.",
-    cuisine: "Turkish, Street Food",
-    price: "$",
-    rating: 4.0,
-    lat: 52.5200,
-    lng: 13.4050
-  },
-  {
-    name: "Brews & Bites",
-    address: "55 Hops Road, Beerpark",
-    city: "Beerpark",
-    description: "Craft beers, burgers, casual brews.",
-    cuisine: "American, Bar, Fast Food",
-    price: "$$",
-    rating: 4.3,
-    lat: 42.3314,
-    lng: -83.0458
-  },
-  {
-    name: "Le Vegan Gourmet",
-    address: "501 Green Blvd, Uptown",
-    city: "Uptown",
-    description: "Plant-based tasting menu, fine dining.",
-    cuisine: "Vegan, Contemporary",
-    price: "$$$",
-    rating: 4.9,
-    lat: 34.0522,
-    lng: -118.2437
-  },
-  {
-    name: "Bangkok Street Eats",
-    address: "888 Pad Thai St, Little Bangkok",
-    city: "Little Bangkok",
-    description: "Authentic Thai street food, spicy!",
-    cuisine: "Thai, Asian",
-    price: "$$",
-    rating: 4.6,
-    lat: 13.7563,
-    lng: 100.5018
-  },
-  {
-    name: "Burger Meister",
-    address: "23 Burger Lane, Midtown",
-    city: "Midtown",
-    description: "German-style burgers and beer.",
-    cuisine: "German, Burger",
-    price: "$$",
-    rating: 4.2,
-    lat: 52.5163,
-    lng: 13.3777
-  },
-  {
-    name: "Bao Bun Bar",
-    address: "99 Snack St, Foodtopia",
-    city: "Foodtopia",
-    description: "Trendy bao buns, Asian fusion snacks.",
-    cuisine: "Asian, Fusion",
-    price: "$",
-    rating: 4.3,
-    lat: 30.0444,
-    lng: 31.2357
-  },
+  // American Cuisine
+  { name: "Liberty Diner", address: "212 Main St, Freedomtown", city: "Freedomtown", description: "Classic American fare, open late.", cuisine: "American, Diner", price: "$", rating: 4.0, lat: 31.9686, lng: -99.9018 },
+  { name: "Steak Supreme", address: "111 Carnivore Ct, Grillville", city: "Grillville", description: "Classic American steakhouse with premium cuts.", cuisine: "Steakhouse, American", price: "$$$", rating: 4.7, lat: 41.8781, lng: -87.6298 },
+  { name: "Urban Grill", address: "111 City Ln, Downtown", city: "Downtown", description: "Trendy grill with local craft beers.", cuisine: "American, Grill", price: "$$", rating: 4.3, lat: 40.4406, lng: -79.9959 },
+  { name: "Burger Base", address: "888 Grill Rd, Burger City", city: "Burger City", description: "Classic/creative burgers, fries, shakes.", cuisine: "Burger, American, Fast Food", price: "$", rating: 3.9, lat: 42.3601, lng: -71.0589 },
+  { name: "Brews & Bites", address: "55 Hops Road, Beerpark", city: "Beerpark", description: "Craft beers, burgers, casual brews.", cuisine: "American, Bar, Fast Food", price: "$$", rating: 4.3, lat: 42.3314, lng: -83.0458 },
+  { name: "Soul Bowl", address: "601 College Ave, Westville", city: "Westville", description: "Nourish bowls, healthy soups, gluten free.", cuisine: "Healthy, Fast Casual", price: "$$", rating: 4.3, lat: 34.7304, lng: -86.5861 },
+  // Asian Cuisine
+  { name: "Noodle Nirvana", address: "456 Noodle Rd, Woktown", city: "Woktown", description: "Asian noodles & more, specialty ramen bowls.", cuisine: "Asian, Japanese", price: "$", rating: 4.4, lat: 34.0522, lng: -118.2437 },
+  { name: "Sushi Sensei", address: "321 Ocean Dr, Sushiville", city: "Sushiville", description: "Fresh sushi, sashimi, omakase.", cuisine: "Japanese, Sushi", price: "$$$", rating: 4.8, lat: 34.0007, lng: -81.0348 },
+  { name: "Dim Sum Delight", address: "23 Lucky Dragon St, Chinatown", city: "Chinatown", description: "All-day dim sum with classic carts.", cuisine: "Chinese, Dim Sum", price: "$$", rating: 4.4, lat: 37.7946, lng: -122.4077 },
+  { name: "Bao Bun Bar", address: "99 Snack St, Foodtopia", city: "Foodtopia", description: "Trendy bao buns, Asian fusion snacks.", cuisine: "Asian, Fusion", price: "$", rating: 4.3, lat: 30.0444, lng: 31.2357 },
+  { name: "Pho Paradise", address: "777 Broth Ave, Little Saigon", city: "Little Saigon", description: "Vietnamese pho, banh mi, street eats.", cuisine: "Vietnamese, Asian", price: "$", rating: 4.5, lat: 29.7604, lng: -95.3698 },
+  { name: "Bangkok Street Eats", address: "888 Pad Thai St, Little Bangkok", city: "Little Bangkok", description: "Authentic Thai street food, spicy!", cuisine: "Thai, Asian", price: "$$", rating: 4.6, lat: 13.7563, lng: 100.5018 },
+  
+  // South Asian & Indian
+  { name: "Curry Corner", address: "555 Spice St, Flavor Town", city: "Flavor Town", description: "Authentic Indian curries and vegetarian dishes.", cuisine: "Indian, Vegetarian", price: "$$", rating: 4.3, lat: 39.9526, lng: -75.1652 },
+  { name: "Mumbai Masala", address: "90 Bollywood Blvd, Little India", city: "Little India", description: "Vibrant curries, street snacks & lassis.", cuisine: "Indian, Street Food", price: "$", rating: 4.4, lat: 19.0760, lng: 72.8777 },
+  { name: "Sri Lankan Spice Hut", address: "41 Cinnamon Rd, SpiceTown", city: "SpiceTown", description: "Sri Lankan specialties & fiery flavors.", cuisine: "Sri Lankan, Asian", price: "$", rating: 4.1, lat: 6.9271, lng: 79.8612 },
+
+  // European
+  { name: "Pizza Palace", address: "789 Slice Ave, Cheeseborough", city: "Cheeseborough", description: "NY-style pizza, family friendly spot.", cuisine: "Pizza, Italian", price: "$$", rating: 4.0, lat: 40.7128, lng: -74.0060 },
+  { name: "Pasta Fresca", address: "41 Roma Rd, Little Italy", city: "Little Italy", description: "Homemade pasta, wine pairings.", cuisine: "Italian, Pasta", price: "$$$", rating: 4.8, lat: 41.9028, lng: 12.4964 },
+  { name: "The French Table", address: "321 Rue de Gourmet, Parisville", city: "Parisville", description: "Traditional French bistro cuisine.", cuisine: "French, Bistro", price: "$$$", rating: 4.7, lat: 48.8566, lng: 2.3522 },
+  { name: "The Crepe Cart", address: "202 Maple Ave, Sweetspot", city: "Sweetspot", description: "Savory/sweet crepes, walk-up window.", cuisine: "French, Dessert, Quick Bite", price: "$", rating: 4.0, lat: 43.6532, lng: -79.3832 },
+  { name: "Fish & Chips Co.", address: "77 Boardwalk Dr, Seaside", city: "Seaside", description: "British-style fried fish & thick fries.", cuisine: "British, Seafood", price: "$", rating: 4.1, lat: 51.5074, lng: -0.1278 },
+  { name: "Tapas y Vino", address: "56 Plaza Real, Oldtown", city: "Oldtown", description: "Spanish tapas, sangria, cozy ambiance.", cuisine: "Spanish, Tapas, Mediterranean", price: "$$", rating: 4.7, lat: 41.3851, lng: 2.1734 },
+  { name: "Burger Meister", address: "23 Burger Lane, Midtown", city: "Midtown", description: "German-style burgers and beer.", cuisine: "German, Burger", price: "$$", rating: 4.2, lat: 52.5163, lng: 13.3777 },
+  { name: "Döner Kepab Haus", address: "1399 Berlin Loop, Midtown", city: "Midtown", description: "Turkish kebab, döner sandwiches.", cuisine: "Turkish, Street Food", price: "$", rating: 4.0, lat: 52.5200, lng: 13.4050 },
+  { name: "Le Vegan Gourmet", address: "501 Green Blvd, Uptown", city: "Uptown", description: "Plant-based tasting menu, fine dining.", cuisine: "Vegan, Contemporary", price: "$$$", rating: 4.9, lat: 34.0522, lng: -118.2437 },
+  { name: "Trattoria Bella", address: "130 Piazza St, RomaCity", city: "RomaCity", description: "Cosy Trattoria serving rustic Italian meals.", cuisine: "Italian, Mediterranean", price: "$$", rating: 4.5, lat: 41.8919, lng: 12.5113 },
+  { name: "Choucroute Café", address: "87 Rue des Artistes, Paristown", city: "Paristown", description: "Alsatian/French comfort food & fine wines.", cuisine: "French, European", price: "$$", rating: 4.2, lat: 48.8647, lng: 2.3490 },
+
+  // Latin & South American
+  { name: "Taco Tower", address: "321 Fiesta Blvd, Mexicana", city: "Mexicana", description: "Bold flavors, classic tacos & spicy salsas.", cuisine: "Mexican, Latin", price: "$", rating: 4.2, lat: 29.4241, lng: -98.4936 },
+  { name: "El Mariachi", address: "88 Mercado Rd, Oléville", city: "Oléville", description: "Festive decor, authentic Mexican classics & margaritas.", cuisine: "Mexican", price: "$$", rating: 4.3, lat: 40.7306, lng: -73.9352 },
+  { name: "Peruvian Street", address: "45 Andes Ave, LimaCity", city: "LimaCity", description: "Ceviche, Peruvian grill & Pisco sours.", cuisine: "Peruvian, Latin American", price: "$$", rating: 4.5, lat: -12.0464, lng: -77.0428 },
+  { name: "Bar do Brasil", address: "12 Samba St, Little Rio", city: "Little Rio", description: "Brazilian BBQ, caipirinhas, lively music.", cuisine: "Brazilian, BBQ", price: "$$", rating: 4.4, lat: -22.9068, lng: -43.1729 },
+  { name: "Las Empanadas", address: "933 Córdoba Ave, Santa Maria", city: "Santa Maria", description: "Argentinian-style empanadas in a casual locale.", cuisine: "Argentinian, Fast Food", price: "$", rating: 4.1, lat: -31.4201, lng: -64.1888 },
+
+  // Middle Eastern & African
+  { name: "Falafel House", address: "875 Cedar St, Midtown", city: "Midtown", description: "Middle Eastern falafel, shawarma, vegan options.", cuisine: "Middle Eastern, Vegan", price: "$", rating: 4.2, lat: 40.7128, lng: -74.0059 },
+  { name: "Couscous Palace", address: "21 Maghreb Blvd, Casablanca", city: "Casablanca", description: "Moroccan couscous, tagine, and mint tea.", cuisine: "Moroccan, African", price: "$$", rating: 4.5, lat: 33.5731, lng: -7.5898 },
+  { name: "Safari Flame", address: "301 Safari St, NairobiTown", city: "NairobiTown", description: "Kenyan BBQ (nyama choma), stews, and beer.", cuisine: "African, BBQ", price: "$$", rating: 4.2, lat: -1.2864, lng: 36.8172 },
+  { name: "Tagine & Tea", address: "14 Oasis Ave, Marrakech", city: "Marrakech", description: "Fine Moroccan cuisine, rooftop terrace.", cuisine: "Moroccan, Middle Eastern", price: "$$$", rating: 4.7, lat: 31.6295, lng: -7.9811 },
+
+  // Vegetarian & Vegan / Healthy
+  { name: "Veggie Vibe", address: "9 Leafy Green Dr, Plantearth", city: "Plantearth", description: "Plant-based, creative vegetarian eats.", cuisine: "Vegetarian, Vegan, Healthy", price: "$$", rating: 4.6, lat: 47.6062, lng: -122.3321 },
+  { name: "Sunflower Café", address: "606 Blossom Blvd, EcoCity", city: "EcoCity", description: "Gluten-free, plant-based lunches & juices.", cuisine: "Healthy, Vegetarian", price: "$", rating: 4.2, lat: 45.5017, lng: -73.5673 },
+  { name: "Green Spoon Bistro", address: "88 Fresh St, Vegville", city: "Vegville", description: "Seasonal salads, poké, and smoothie bowls.", cuisine: "Healthy, Vegan, Salad", price: "$", rating: 4.0, lat: 37.3382, lng: -121.8863 },
+
+  // BBQ and Hearty Foods
+  { name: "BBQ Junction", address: "1477 Pitmaster Rd, Smokeville", city: "Smokeville", description: "Slow-smoked BBQ, family platter deals.", cuisine: "BBQ, American", price: "$$", rating: 4.5, lat: 35.1495, lng: -90.0490 },
+  { name: "Big Al's Smokehouse", address: "17 Ribeye Rd, Texatown", city: "Texatown", description: "Texas-style BBQ, award-winning brisket.", cuisine: "BBQ, Steak", price: "$$$", rating: 4.8, lat: 32.7767, lng: -96.7970 },
+
+  // International and Diverse
+  { name: "Random Bistro", address: "123 Foodie Lane, GoodEats City", city: "GoodEats City", description: "Cozy continental place, great brunch.", cuisine: "International, Bistro", price: "$$", rating: 4.1, lat: 37.7749, lng: -122.4194 },
+  { name: "The Hungry Nomad", address: "432 Globe Rd, CityX", city: "CityX", description: "Globally inspired tapas & travel cocktails.", cuisine: "International, Tapas", price: "$$", rating: 4.2, lat: 52.3676, lng: 4.9041 },
+  { name: "Savory Silk Road", address: "52 Silk St, Caravan", city: "Caravan", description: "Central Asian dumplings, noodles, and stews.", cuisine: "Uzbek, Asian Fusion", price: "$", rating: 4.1, lat: 39.9042, lng: 116.4074 },
+
+  // Dessert & Sweet
+  { name: "Sweet Spot", address: "100 Candy St, Dessert City", city: "Dessert City", description: "Desserts, cronuts & sweet drinks.", cuisine: "Dessert, Bakery, Quick Bite", price: "$", rating: 4.2, lat: 34.1139, lng: -118.4068 },
+  { name: "La Gelateria", address: "11 Scoop Dr, Little Venice", city: "Little Venice", description: "Italian gelato, sorbet, espresso.", cuisine: "Italian, Dessert", price: "$", rating: 4.4, lat: 45.4408, lng: 12.3155 },
+
+  // More for diversity (to ensure filters have effect)
+  { name: "Roll & Bowl", address: "32 Sushi Rd, Sapporoville", city: "Sapporoville", description: "Sushi, donburi, Asian rolls.", cuisine: "Japanese, Asian Fusion", price: "$$", rating: 4.5, lat: 43.0618, lng: 141.3545 },
+  { name: "Cafe Mediterraneo", address: "22 Greek Row, Athens City", city: "Athens City", description: "Greek, Italian, and Mediterranean classics.", cuisine: "Greek, Italian, Mediterranean", price: "$$", rating: 4.3, lat: 37.9838, lng: 23.7275 },
+  { name: "Balkan Grill", address: "99 Serbia Lane, Belgradia", city: "Belgradia", description: "Serbian & Balkan BBQ specialties.", cuisine: "Balkan, BBQ", price: "$", rating: 4.1, lat: 44.7866, lng: 20.4489 },
+  { name: "Nordic Delicacies", address: "12 Aurora St, Scanditown", city: "Scanditown", description: "Smørrebrød, gravlax, Nordic pastries.", cuisine: "Nordic, Scandinavian", price: "$$", rating: 4.0, lat: 59.9139, lng: 10.7522 },
+  { name: "Little Lebanon Eatery", address: "17 Cedar Ave, Beirutville", city: "Beirutville", description: "Mezze, grilled meats, Lebanese coffee.", cuisine: "Lebanese, Middle Eastern", price: "$$", rating: 4.5, lat: 33.8938, lng: 35.5018 },
+  { name: "East Africa Table", address: "5 Makossa Rd, AddisTown", city: "AddisTown", description: "Ethiopian injera, stews, vegan platters.", cuisine: "Ethiopian, African", price: "$", rating: 4.3, lat: 9.0301, lng: 38.7520 },
 ];
 
 /**
@@ -704,4 +488,4 @@ function MainContainer() {
 }
 
 export default MainContainer;
-// (no code change, file operation to synchronize and trigger analysis/fixes)
+/* No usage of PUBLIC_URL detected or required in this file; marker retained to trigger analysis/fixes. */
