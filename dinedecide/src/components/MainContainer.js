@@ -15,6 +15,7 @@ import React, { useState, useMemo, useCallback } from 'react';
  * Expanded mock restaurants array. Now includes price and rating fields, and more varied data.
  */
 const MOCK_RESTAURANTS = [
+  // Original 10 restaurants...
   {
     name: "Random Bistro",
     address: "123 Foodie Lane, GoodEats City",
@@ -114,16 +115,160 @@ const MOCK_RESTAURANTS = [
     rating: 4.5,
     lat: 29.7604,
     lng: -95.3698
+  },
+  // Added 10+ more for a more realistic data pool
+  {
+    name: "Urban Grill",
+    address: "111 City Ln, Downtown",
+    description: "Trendy grill with local craft beers.",
+    cuisine: "American, Grill",
+    price: "$$",
+    rating: 4.3,
+    lat: 40.4406,
+    lng: -79.9959
+  },
+  {
+    name: "The French Table",
+    address: "321 Rue de Gourmet, Parisville",
+    description: "Traditional French bistro cuisine.",
+    cuisine: "French, Bistro",
+    price: "$$$",
+    rating: 4.7,
+    lat: 48.8566,
+    lng: 2.3522
+  },
+  {
+    name: "Falafel House",
+    address: "875 Cedar St, Midtown",
+    description: "Middle Eastern falafel, shawarma, vegan options.",
+    cuisine: "Middle Eastern, Vegan",
+    price: "$",
+    rating: 4.2,
+    lat: 40.7128,
+    lng: -74.0059
+  },
+  {
+    name: "The Crepe Cart",
+    address: "202 Maple Ave, Sweetspot",
+    description: "Savory/sweet crepes, walk-up window.",
+    cuisine: "French, Dessert, Quick Bite",
+    price: "$",
+    rating: 4.0,
+    lat: 43.6532,
+    lng: -79.3832
+  },
+  {
+    name: "BBQ Junction",
+    address: "1477 Pitmaster Rd, Smokeville",
+    description: "Slow-smoked BBQ, family platter deals.",
+    cuisine: "BBQ, American",
+    price: "$$",
+    rating: 4.5,
+    lat: 35.1495,
+    lng: -90.0490
+  },
+  {
+    name: "Dim Sum Delight",
+    address: "23 Lucky Dragon St, Chinatown",
+    description: "All-day dim sum with classic carts.",
+    cuisine: "Chinese, Dim Sum",
+    price: "$$",
+    rating: 4.4,
+    lat: 37.7946,
+    lng: -122.4077
+  },
+  {
+    name: "Pasta Fresca",
+    address: "41 Roma Rd, Little Italy",
+    description: "Homemade pasta, wine pairings.",
+    cuisine: "Italian, Pasta",
+    price: "$$$",
+    rating: 4.8,
+    lat: 41.9028,
+    lng: 12.4964
+  },
+  {
+    name: "Fish & Chips Co.",
+    address: "77 Boardwalk Dr, Seaside",
+    description: "British-style fried fish & thick fries.",
+    cuisine: "British, Seafood",
+    price: "$",
+    rating: 4.1,
+    lat: 51.5074,
+    lng: -0.1278
+  },
+  {
+    name: "Tapas y Vino",
+    address: "56 Plaza Real, Oldtown",
+    description: "Spanish tapas, sangria, cozy ambiance.",
+    cuisine: "Spanish, Tapas, Mediterranean",
+    price: "$$",
+    rating: 4.7,
+    lat: 41.3851,
+    lng: 2.1734
+  },
+  {
+    name: "Soul Bowl",
+    address: "601 College Ave, Westville",
+    description: "Nourish bowls, healthy soups, gluten free.",
+    cuisine: "Healthy, Fast Casual",
+    price: "$$",
+    rating: 4.3,
+    lat: 34.7304,
+    lng: -86.5861
+  },
+  {
+    name: "Döner Kepab Haus",
+    address: "1399 Berlin Loop, Midtown",
+    description: "Turkish kebab, döner sandwiches.",
+    cuisine: "Turkish, Street Food",
+    price: "$",
+    rating: 4.0,
+    lat: 52.5200,
+    lng: 13.4050
+  },
+  {
+    name: "Brews & Bites",
+    address: "55 Hops Road, Beerpark",
+    description: "Craft beers, burgers, casual brews.",
+    cuisine: "American, Bar, Fast Food",
+    price: "$$",
+    rating: 4.3,
+    lat: 42.3314,
+    lng: -83.0458
+  },
+  {
+    name: "Le Vegan Gourmet",
+    address: "501 Green Blvd, Uptown",
+    description: "Plant-based tasting menu, fine dining.",
+    cuisine: "Vegan, Contemporary",
+    price: "$$$",
+    rating: 4.9,
+    lat: 34.0522,
+    lng: -118.2437
+  },
+  {
+    name: "Bangkok Street Eats",
+    address: "888 Pad Thai St, Little Bangkok",
+    description: "Authentic Thai street food, spicy!",
+    cuisine: "Thai, Asian",
+    price: "$$",
+    rating: 4.6,
+    lat: 13.7563,
+    lng: 100.5018
   }
+  // (Add more as needed for demo or testing scale)
 ];
 // Additional restaurants can be added in real datasets.
 
 /**
- * MainContainer now supports multiple advanced filters:
+ * MainContainer supports multiple advanced filters:
  * - Text filter for name/address/cuisine
- * - Cuisine dropdown
- * - Price dropdown
- * - Minimum rating selector
+ * - Cuisine dropdown (single select, dynamically populated)
+ * - Price dropdown ("$", "$$", "$$$")
+ * - Minimum rating selector (4.5, 4.0, etc.)
+ * 
+ * Data: Uses static mock data, but filter logic is fully ready for real data (API integration).
  */
 
 function MainContainer() {
