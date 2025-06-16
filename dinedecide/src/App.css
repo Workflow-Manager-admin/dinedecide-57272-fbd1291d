@@ -21,9 +21,11 @@
   --footer-bg: #151934;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 body {
   margin: 0;
-  font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Inter', 'Roboto', 'Montserrat', 'Helvetica', 'Arial', sans-serif;
   background-color: var(--base-dark);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
