@@ -1,9 +1,24 @@
 :root {
-  --base-light: #00ffff;
-  --base-dark: #00008b;
+  /* KAVIA + DineDecide custom palette */
+  --primary: #4CAF50;
+  --secondary: #FFC107;
+  --accent: #2196F3;
+
+  --kavia-orange: #E87A41;
+  --kavia-dark: #1A1A1A;
+  --base-dark: #181d22;
+  --base-mid: #222c36;
+  --base-light: #2196F3;
+  --surface: #212532;
+
   --text-color: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color: rgba(255,255,255,0.08);
+
+  /* Element backgrounds */
+  --suggestion-bg: #222c36;
+  --map-bg: #191e28;
+  --footer-bg: #151934;
 }
 
 body {
@@ -106,3 +121,194 @@ body {
   padding: 12px 24px;
   font-size: 1.1rem;
 }
+
+/* ========== MainContainer & children ========== */
+
+/* Layout: main wrapper for MainContainer */
+.main-container-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--base-dark);
+  color: var(--text-color);
+}
+
+/* Top Section (Input/filter) */
+.main-container-filters {
+  padding: 30px 0 20px 0;
+  background: var(--base-dark);
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+}
+
+.main-container-filters h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.08);
+}
+
+.main-container-input {
+  margin-top: 14px;
+  max-width: 360px;
+  width: 100%;
+  font-size: 1rem;
+  padding: 13px 18px;
+  border-radius: 6px;
+  border: 1.5px solid var(--border-color);
+  background: #16192b;
+  color: var(--text-color);
+  outline: none;
+  transition: border-color 0.18s;
+  box-sizing: border-box;
+}
+.main-container-input:focus, .main-container-input:hover {
+  border-color: var(--accent);
+}
+
+/* Suggestion Section/Card */
+.main-container-suggestion {
+  background: var(--suggestion-bg);
+  border-radius: 15px;
+  padding: 34px 28px;
+  box-shadow: 0 4px 20px 0 rgba(18,22,30,0.10), 0 1.5px 6px rgba(76,175,80,0.04);
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+  border: 1.7px solid rgba(76,175,80,0.13);
+}
+
+.main-container-suggestion .suggestion-name {
+  font-weight: 700;
+  font-size: 2.08rem;
+  margin-bottom: 7px;
+  color: var(--primary);
+  letter-spacing: 0.01em;
+}
+
+.main-container-suggestion .suggestion-cuisine {
+  color: var(--secondary);
+  font-size: 1.14rem;
+  font-weight: 500;
+  margin-bottom: 7px;
+  letter-spacing: 0.01em;
+}
+
+.main-container-suggestion .suggestion-address {
+  color: var(--text-secondary);
+  font-size: 1.08rem;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.main-container-suggestion .suggestion-desc {
+  font-size: 1.03rem;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.main-container-suggestion .reroll-btn {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 600;
+  font-size: 1.04rem;
+  border-radius: 6px;
+  border: none;
+  padding: 10px 28px;
+  margin-top: 9px;
+  cursor: pointer;
+  transition: background 0.19s;
+  box-shadow: 0 2px 8px rgba(33,150,243,.06);
+}
+.main-container-suggestion .reroll-btn:disabled {
+  background: #8bc37c;
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+.main-container-suggestion .reroll-btn:hover:enabled {
+  background-color: var(--accent);
+}
+
+/* Error/empty state in suggestion */
+.main-container-suggestion .suggestion-empty {
+  min-height: 70px;
+  color: #e02424;
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+/* Map Section */
+.main-container-map {
+  background: var(--map-bg);
+  border-radius: 11px;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto 38px auto;
+  min-height: 222px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1.6px solid rgba(33,150,243,0.13);
+  box-shadow: 0 2px 10px 0 rgba(33,150,243,0.08);
+}
+.main-container-map iframe {
+  width: 100%;
+  height: 222px;
+  border: 0;
+}
+
+/* Footer Section */
+.main-container-footer {
+  background: var(--footer-bg);
+  color: var(--text-secondary);
+  font-size: 1.01rem;
+  text-align: center;
+  padding: 22px 0 18px 0;
+  margin-top: auto;
+  letter-spacing: 0.01em;
+  border-top: 1px solid var(--border-color);
+}
+.main-container-footer a {
+  color: var(--accent);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 650px) {
+  .main-container-suggestion {
+    padding: 20px 8px;
+    max-width: 96vw;
+  }
+  .main-container-map {
+    max-width: 98vw;
+    min-height: 148px;
+  }
+  .main-container-footer {
+    font-size: 0.98rem;
+    padding: 16px 0 13px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .main-container-filters h2 {
+    font-size: 1.09rem;
+  }
+  .main-container-input {
+    padding: 10px 8px;
+    font-size: 0.99rem;
+    max-width: 96vw;
+  }
+  .main-container-suggestion .suggestion-name {
+    font-size: 1.32rem;
+  }
+}
+
